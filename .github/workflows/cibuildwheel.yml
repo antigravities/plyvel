@@ -67,14 +67,14 @@ jobs:
             architecture: x86
             cibw:
               arch: x86
-              build: "cp37-* cp38-* cp39-* cp310-* cp311-* cp312-* cp313-*"
+              build: "cp311-* cp312-* cp313-*"
 
           - os: windows-2025
             name: win_amd64
             architecture: x64
             cibw:
               arch: AMD64
-              build: "cp37-* cp38-* cp39-* cp310-* cp311-* cp312-* cp313-*" #cp38*win_amd64 cp39*win_amd64"
+              build: "cp311-* cp312-* cp313-*" #cp38*win_amd64 cp39*win_amd64"
     env:
       VCPKG_INCLUDE_PATH: "C:/vcpkg/installed/${{ matrix.architecture }}-windows/include"
       VCPKG_LIB_PATH: "C:/vcpkg/installed/${{ matrix.architecture }}-windows/lib"
