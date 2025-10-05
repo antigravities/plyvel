@@ -33,7 +33,7 @@ $env:CL="/I$INCLUDE" # where find snappy header files
 $env:LINK="/LIBPATH:$LIB" # where find snappy library files
 
 mkdir build -ea 0; Set-Location build
-cmake -G "Visual Studio 16 2019" -A $arch `
+cmake -G "Visual Studio 17 2022" -A $arch `
     -DCMAKE_INSTALL_PREFIX="$INSTALL_PREFIX" `
     -DBUILD_SHARED_LIBS=ON `
     -DCMAKE_POSITION_INDEPENDENT_CODE=ON `
