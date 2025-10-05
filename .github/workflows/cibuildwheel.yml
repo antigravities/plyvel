@@ -155,20 +155,8 @@ jobs:
           path: ./wheelhouse/*.whl
           name: ${{ matrix.os }}-${{ matrix.architecture }}
 
-  release:
-    name: Release to github
-    needs: [sdist, wheel]
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/v')
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: artifact
-          path: dist
-
       - uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/v')
         with:
           files: |
-            ./dist/*
+            ./wheelhouse/*
